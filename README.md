@@ -1,6 +1,12 @@
 # COVID-19 API
 
-API for https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports
+![covid19_api](https://user-images.githubusercontent.com/872589/83847861-46a73c80-a70d-11ea-83b4-f333505544d7.png)
+
+Website: https://covid19inf.herokuapp.com/
+
+API: https://covid19inf.herokuapp.com/api/
+
+All data used from the [COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports)
 
 Usage:
 
