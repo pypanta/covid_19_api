@@ -1,0 +1,98 @@
+# Serbian translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-05-01 13:37+0200\n"
+"PO-Revision-Date: 2020-04-30 07:51+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: sr\n"
+"Language-Team: sr <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: routes/views.py:80
+msgid "About"
+msgstr ""
+
+#: templates/base.html:28
+msgid "All"
+msgstr "Svi"
+
+#: templates/base.html:29 templates/home.html:84 templates/home.html:94
+msgid "Last Update"
+msgstr "Poslednje Ažuriranje"
+
+#: templates/base.html:32
+msgid "Top Confirmed"
+msgstr "Najviše Potvrđenih"
+
+#: templates/base.html:33
+msgid "Top Deaths"
+msgstr "Najviše Umrlih"
+
+#: templates/base.html:34
+msgid "Top Recovered"
+msgstr "Najviše Oporavljenih"
+
+#: templates/base.html:39 templates/home.html:12
+msgid "New Confirmed"
+msgstr "Novi Potvrđeni"
+
+#: templates/base.html:40 templates/home.html:37
+msgid "New Deaths"
+msgstr "Novi Umrli"
+
+#: templates/base.html:41 templates/home.html:62
+msgid "New Recovered"
+msgstr "Novi Oporavljeni"
+
+#: templates/base.html:44
+msgid "Help"
+msgstr "Pomoć"
+
+#: templates/home.html:6
+msgid "Top 10 Confirmed"
+msgstr "Top 10 Potvrđeni"
+
+#: templates/home.html:10 templates/home.html:35 templates/home.html:60
+#: templates/home.html:88
+msgid "Country"
+msgstr "Država"
+
+#: templates/home.html:11 templates/home.html:89
+msgid "Confirmed"
+msgstr "Potvrđeni"
+
+#: templates/home.html:31
+msgid "Top 10 Deaths"
+msgstr "Top 10 Umrli"
+
+#: templates/home.html:36 templates/home.html:90
+msgid "Deaths"
+msgstr "Umrli"
+
+#: templates/home.html:56
+msgid "Top 10 Recovered"
+msgstr "Top 10 Oporavljeni"
+
+#: templates/home.html:61 templates/home.html:92
+msgid "Recovered"
+msgstr "Oporavljeni"
+
+#: templates/home.html:91
+msgid "Mortality Rate"
+msgstr "Procenat Smrtnosti"
+
+#: templates/home.html:93
+msgid "Active"
+msgstr "Aktivni"
+

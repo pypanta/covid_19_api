@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+  {% if country %}
+    <div class="col-12 mb-4 text-primary text-center">
+      {% for case in country %}
+      <span style="font-size:18px">
+        {% if loop.first %}| {{ country[case]|upper }} |&nbsp;&nbsp;
+        {% elif not loop.last %}{{ case }}: {{ country[case] }}{% endif %}
+        {% if not loop.first and not loop.index > 4 %}, {% endif %}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% for case in total %}
+  <div class="col-md-3 mb-5 mt-2">
+    <div class="card text-center
+      {% if case=='Confirmed' %}border-warning
+      {% elif case=='Deaths' %}border-dark
+      {% elif case=='Recovered' %}border-success
+      {%else %}border-info{% endif %}">
+      <div class="card-header thead-dark">Total {{ case }}</div>
+      <div class="card-body">
+        {{ "{:,}".format(total[case]) }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="col-md-4">
+    <h4>{{ _('Top 10 Confirmed') }}</h4>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">{{ _('Country') }}</th>
+          <th scope="col">{{ _('Confirmed') }}</th>
+          <th scope="col">{{ _('New Confirmed') }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for country, number in top_confirmed.items() %}
+          <tr class="table-warning">
+            <td>{{ country }}</td>
+            <td>{{ number }}</td>
+            {% if country in new_confirmed %}
+              <td>{{ new_confirmed[country] }}</td>
+            {% else %}
+              <td>0</td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-4">
+    <h4>{{ _('Top 10 Deaths') }}</h4>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">{{ _('Country') }}</th>
+          <th scope="col">{{ _('Deaths') }}</th>
+          <th scope="col">{{ _('New Deaths') }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for country, number in top_deaths.items() %}
+          <tr class="table-dark">
+            <td>{{ country }}</td>
+            <td>{{ number }}</td>
+            {% if country in new_deaths %}
+              <td>{{ new_deaths[country] }}</td>
+            {% else %}
+              <td>0</td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-4">
+    <h4>{{ _('Top 10 Recovered') }}</h4>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">{{ _('Country') }}</th>
+          <th scope="col">{{ _('Recovered') }}</th>
+          <th scope="col">{{ _('New Recovered') }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for country, number in top_recovered.items() %}
+          <tr class="table-success">
+            <td>{{ country }}</td>
+            <td>{{ number }}</td>
+            {% if country in new_recovered %}
+              <td>{{ new_recovered[country] }}</td>
+            {% else %}
+              <td>0</td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-12">
+    <h2>{{ _('Latest Update') }}</h2>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">{{ _('Country') }}</th>
+        <th scope="col">{{ _('Confirmed') }}</th>
+        <th scope="col">{{ _('Deaths') }}</th>
+        <th scope="col">{{ _('Mortality Rate') }}</th>
+        <th scope="col">{{ _('Recovered') }}</th>
+        <th scope="col">{{ _('Active') }}</th>
+        <th scope="col">{{ _('Last Update') }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for country in countries %}
+        <tr>
+          <td>{{ country }}</td>
+          <td>{{ countries[country]['Confirmed'] }}</td>
+          <td>{{ countries[country]['Deaths'] }}</td>
+          <td>{{ mort_rate.get(country)|round(1, 'floor') }}%</td>
+          <td>{{ countries[country]['Recovered'] }}</td>
+          <td>{{ countries[country]['Active'] }}</td>
+          <td>{{ countries[country]['Last_Update'] }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
